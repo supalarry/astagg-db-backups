@@ -47,6 +47,11 @@ export const env = envsafe({
     desc: 'Enables support for buckets with object lock by providing an MD5 hash with the backup file',
     default: false
   }),
+  HEALTHCHECK_URL: str({
+    desc: 'A URL to GET after each successful backup, and with "/fail" appended after a failed one.',
+    default: '',
+    allowEmpty: true,
+  }),
   BACKUP_OPTIONS: str({
     desc: 'Any valid pg_dump option.',
     default: '',
